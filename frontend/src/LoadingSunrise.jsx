@@ -20,7 +20,7 @@ export default function LoadingSunrise(props) {
       height: '100vh',
       background: 'linear-gradient(to top, #ee9212 60%, #ffecd2 100%)',
       display: 'flex',
-      alignItems: 'flex-end',
+      alignItems: 'center',
       justifyContent: 'center',
       transition: 'opacity 0.5s',
       animation: 'fadeout 0.5s 1.7s forwards',
@@ -45,9 +45,15 @@ export default function LoadingSunrise(props) {
         </defs>
         <rect x="0" y="0" width="400" height="300" fill="url(#sunrise-bg)" />
         {/* Clouds */}
-        <ellipse cx="80" cy="120" rx="60" ry="18" fill="#fff" opacity="0.8" />
-        <ellipse cx="320" cy="100" rx="70" ry="22" fill="#fff" opacity="0.7" />
-        <ellipse cx="200" cy="140" rx="90" ry="25" fill="#fff" opacity="0.6" />
+        <ellipse cx="80" cy="120" rx="60" ry="18" fill="#fff" opacity="0.8">
+          <animate attributeName="cx" values="80;100;80" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" />
+        </ellipse>
+        <ellipse cx="320" cy="100" rx="70" ry="22" fill="#fff" opacity="0.7">
+          <animate attributeName="cx" values="320;300;320" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" />
+        </ellipse>
+        <ellipse cx="200" cy="140" rx="90" ry="25" fill="#fff" opacity="0.6">
+          <animate attributeName="cx" values="200;210;200" keyTimes="0;0.5;1" dur="2.2s" repeatCount="indefinite" />
+        </ellipse>
         {/* Sun glow (radial gradient, animated, full background, stronger) */}
         <rect
           x="0"
@@ -58,7 +64,7 @@ export default function LoadingSunrise(props) {
           opacity="1"
         >
           <animate attributeName="y" from="130" to="0" dur="1.5s" fill="freeze" />
-          <animate attributeName="opacity" values="1;0.85;1;0.92;1" keyTimes="0;0.2;0.5;0.8;1" dur="1.5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="1;0.7;1;0.85;1" keyTimes="0;0.2;0.5;0.8;1" dur="1.5s" repeatCount="indefinite" />
         </rect>
         {/* Sun (animated, full circle, with extra glow) */}
         <g>
@@ -113,7 +119,7 @@ export default function LoadingSunrise(props) {
         position: 'absolute',
         left: 0,
         right: 0,
-        top: '60%',
+        top: '70%',
         textAlign: 'center',
         fontFamily: 'Minecraftia, Segoe UI, Arial, sans-serif',
         fontSize: '2.2rem',
@@ -121,7 +127,7 @@ export default function LoadingSunrise(props) {
         textShadow: '2px 2px 0 #fff, 4px 4px 0 #3e3e3e',
         letterSpacing: '2px',
         fontWeight: 700
-      }}></span>
+      }}>Notecraft is loading...</span>
       <style>{`
         @keyframes fadeout { to { opacity: 0; pointer-events: none; } }
       `}</style>
