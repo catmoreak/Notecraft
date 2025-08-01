@@ -11,7 +11,7 @@ A Minecraft-themed notes app with a Flask backend and a SolidJS frontend. Enjoy 
 
 ## Tech Stack
 - **Frontend:** SolidJS, Vite, CSS, SVG
-- **Backend:** Flask, Python, SQLAlchemy
+- **Backend:** Flask, Python, SQLAlchemy, Neon (PostgreSQL)
 
 ## Getting Started
 
@@ -20,6 +20,7 @@ A Minecraft-themed notes app with a Flask backend and a SolidJS frontend. Enjoy 
 git clone https://github.com/catmoreak/Notecraft.git
 cd Notecraft
 ```
+
 
 ### 2. Backend Setup
 ```
@@ -30,6 +31,10 @@ pip install -r requirements.txt
 python app.py
 ```
 The backend will run on `http://localhost:5000` by default.
+
+
+### Using Neon Database
+Notecraft also supports [Neon](https://neon.tech/) as a cloud PostgreSQL database for production deployments.
 
 ### 3. Frontend Setup
 ```
