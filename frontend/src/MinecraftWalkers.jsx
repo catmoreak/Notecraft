@@ -123,6 +123,26 @@ export default function MinecraftWalkers() {
 
   return (
     <div style={{ position: 'fixed', left: 0, bottom: 0, width: '100vw', height: '180px', pointerEvents: 'none', zIndex: 2 }}>
+      {/* Bird flying in the sky */}
+      <svg width="100vw" height="60" style={{ position: 'absolute', left: 0, top: 0, width: '100vw', height: '60px', zIndex: 3, pointerEvents: 'none' }}>
+        <g>
+          <animateTransform attributeName="transform" type="translate" from="-80 20" to="1000 20" dur="5s" repeatCount="indefinite" />
+          {/* Simple pixel-art style bird (white body, yellow beak, flapping wings) */}
+          <ellipse cx="0" cy="20" rx="14" ry="7" fill="#fff" stroke="#bbb" strokeWidth="2" />
+          <ellipse cx="12" cy="18" rx="4" ry="4" fill="#fff" stroke="#bbb" strokeWidth="1.5" />
+          <polygon points="18,18 24,20 18,22" fill="#fbc02d" />
+          <circle cx="14" cy="17" r="1.2" fill="#222" />
+          {/* Flapping wings */}
+          <g>
+            <path id="wingL" d="M-10,20 Q-30,10 0,30" fill="none" stroke="#fff" strokeWidth="5" strokeLinecap="round">
+              <animate attributeName="d" values="M-10,20 Q-30,10 0,30;M-10,20 Q-30,30 0,10;M-10,20 Q-30,10 0,30" keyTimes="0;0.5;1" dur="0.7s" repeatCount="indefinite" />
+            </path>
+            <path id="wingR" d="M10,20 Q30,10 0,30" fill="none" stroke="#fff" strokeWidth="5" strokeLinecap="round">
+              <animate attributeName="d" values="M10,20 Q30,10 0,30;M10,20 Q30,30 0,10;M10,20 Q30,10 0,30" keyTimes="0;0.5;1" dur="0.7s" repeatCount="indefinite" />
+            </path>
+          </g>
+        </g>
+      </svg>
       {/* Minecraft trees background */}
       <svg width="100vw" height="240" style={{ position: 'absolute', left: 0, bottom: 0, width: '100vw', height: '240px', zIndex: 1 }}>
         {/* Tree 1 - much bigger */}
